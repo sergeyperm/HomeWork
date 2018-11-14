@@ -33,7 +33,7 @@ namespace HomeWorks
             }
             planets.Add(new Planet(new Point(500, 200), new Point(10, 10), new Size(150, 150), "\\PlanetImages\\Earth.jpg"));
             planets.Add(new Planet(new Point(800, 100), new Point(10, 10), new Size(50, 50), "\\PlanetImages\\Luna.jpg"));
-            planets.Add(new Planet(new Point(100, 50), new Point(10, 10), new Size(200, 200), "\\PlanetImages\\Sun.jpg"));
+            planets.Add(new Planet(new Point(25, 25), new Point(10, 10), new Size(200, 200), "\\PlanetImages\\Sun.jpg"));
         }
 
         public void GalaxyShow()

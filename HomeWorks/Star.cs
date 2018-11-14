@@ -14,15 +14,19 @@ namespace HomeWorks
         }
         public override void Draw()
         {
-            //    Game.Buffer.Graphics.DrawLine(Pens.White, Pos.X, Pos.Y, Pos.X + Size.Width, Pos.Y + Size.Height);
-            //    Game.Buffer.Graphics.DrawLine(Pens.White, Pos.X + Size.Width, Pos.Y, Pos.X,Pos.Y + Size.Height);
             Game.Buffer.Graphics.DrawEllipse(Pens.White, pos.X, pos.Y, size.Width, size.Height);
             Game.Buffer.Graphics.FillEllipse(Brushes.White, pos.X, pos.Y, size.Width, size.Height);
         }
         public override void Update(Galaxy galaxy)
         {
             pos.X = pos.X + dir.X;
+            pos.Y = pos.Y + dir.Y;
             if (pos.X < 0) pos.X = galaxy.galaxyWidth + size.Width;
         }
-    } 
+        public void Move(Galaxy galaxy)
+        {
+            Update(galaxy);
+            Draw();    
+        }
+    }
 }

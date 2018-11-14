@@ -9,9 +9,9 @@ namespace HomeWorks
 {
     class GalaxyObjects
     {
-        protected Point pos;
-        protected Point dir;
-        protected Size size;
+        public Point pos;
+        public Point dir;
+        public Size size;
         public GalaxyObjects(Point _pos, Point _dir, Size _size)
         {
             pos = _pos;
