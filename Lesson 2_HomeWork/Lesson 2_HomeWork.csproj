@@ -45,6 +45,10 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Worker.cs" />
+    <Compile Include="WorkerFixSalary.cs" />
+    <Compile Include="WorkerHourSalary.cs" />
+    <Compile Include="Emploers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
