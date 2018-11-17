@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace HomeWorks
 {
-    class Asteroid:Star
+    class Asteroid:GalaxyObjects
     {
         public Asteroid(Point pos, Point dir, Size size) : base(pos, dir, size)
         {
@@ -18,15 +18,14 @@ namespace HomeWorks
             Game.Buffer.Graphics.DrawEllipse(Pens.Orange, pos.X, pos.Y, size.Width, size.Height);
             Game.Buffer.Graphics.FillEllipse(Brushes.Orange, pos.X, pos.Y, size.Width, size.Height);
         }
-        public override void Update(Galaxy galaxy)
+        public override void Update()
         {
             pos.X = pos.X + dir.X;
             pos.Y = pos.Y + dir.Y;
-            //if (pos.X < 0) pos.X = galaxy.galaxyWidth + size.Width;
         }
-        public new void Move(Galaxy galaxy)
+        public void Move()
         {
-            Update(galaxy);
+            Update();
             Draw();
         }
     }

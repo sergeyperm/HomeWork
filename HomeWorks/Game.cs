@@ -39,7 +39,7 @@ namespace HomeWorks
 
         private static void Timer1_Tick(object sender, EventArgs e)
         {
-            if (asteroid.pos.X>galaxy.galaxyWidth|| asteroid.pos.X > galaxy.galaxyHeight)
+            if (asteroid.pos.X>galaxy.galaxyWidth||asteroid.pos.X > galaxy.galaxyHeight)
             {
                 asteroid = new Asteroid(new Point(rand.Next(galaxy.galaxyWidth), rand.Next(galaxy.galaxyHeight)), new Point(5, 5), new Size(6, 6));
             }
@@ -47,12 +47,14 @@ namespace HomeWorks
 
         public static Galaxy galaxy;
         public static Asteroid asteroid=new Asteroid(new Point(10, 200), new Point(5, 5), new Size(6, 6));
+        public static Bullet bullet = new Bullet(new Point(500, 200), new Point(5, 5), new Size(6, 6));
         public static Random rand=new Random();
         public static void Draw()
         {
             Buffer.Graphics.Clear(Color.Black);
             galaxy.GalaxyShow();
-            asteroid.Move(galaxy);
+            asteroid.Draw();
+            bullet.Draw();
             Buffer.Render();
         }
         
@@ -63,7 +65,8 @@ namespace HomeWorks
         }
         public static void Update()
         {
-            asteroid.Update(galaxy);
+            asteroid.Update();
+            bullet.Update();
         }
     }
 }

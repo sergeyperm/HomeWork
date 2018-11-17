@@ -17,15 +17,14 @@ namespace HomeWorks
             Game.Buffer.Graphics.DrawEllipse(Pens.White, pos.X, pos.Y, size.Width, size.Height);
             Game.Buffer.Graphics.FillEllipse(Brushes.White, pos.X, pos.Y, size.Width, size.Height);
         }
-        public override void Update(Galaxy galaxy)
+        public override void Update()
         {
-            pos.X = pos.X + dir.X;
-            pos.Y = pos.Y + dir.Y;
-            if (pos.X < 0) pos.X = galaxy.galaxyWidth + size.Width;
+            pos.X = pos.X + dir.X*2;
+            pos.Y = pos.Y + dir.Y*2;
         }
         public void Move(Galaxy galaxy)
         {
-            Update(galaxy);
+            Update();
             Draw();    
         }
     }

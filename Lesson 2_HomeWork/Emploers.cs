@@ -41,8 +41,8 @@ namespace Lesson_2_HomeWork
                     return -1;
                 }
                 else return 0;
-
             }
+            
             if ((x is WorkerHourSalary) && (y is WorkerHourSalary))
             {
                 if ((x as WorkerHourSalary).hourlyRate < (y as WorkerHourSalary).hourlyRate)

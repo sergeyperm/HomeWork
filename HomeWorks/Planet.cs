@@ -22,5 +22,9 @@ namespace HomeWorks
             Rectangle rect = new Rectangle(pos.X, pos.Y, size.Width,size.Height);
             Game.Buffer.Graphics.DrawImage(_image, rect);
         }
+        public override void Update()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
