@@ -17,7 +17,12 @@ namespace HomeWorks
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
-            Form form = new Form();
+            Form form = new Form
+            {
+                Width = Screen.PrimaryScreen.Bounds.Width,
+                Height = Screen.PrimaryScreen.Bounds.Height
+            };
+
             form.Width = 1000;
             form.Height = 600;
             Game.Init(form);
@@ -25,6 +30,7 @@ namespace HomeWorks
             form.Show();
             Game.Draw();
             Application.Run(form);
+
         }
     }
 }

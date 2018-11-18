@@ -15,7 +15,10 @@ namespace HomeWorks
         static Game()
         {
         }
+
         
+
+
         public static void Init(Form form)
         {
             Graphics g;
@@ -48,6 +51,8 @@ namespace HomeWorks
         public static Galaxy galaxy;
         public static Asteroid asteroid=new Asteroid(new Point(10, 200), new Point(5, 5), new Size(6, 6));
         public static Bullet bullet = new Bullet(new Point(500, 200), new Point(5, 5), new Size(6, 6));
+        public static Asteroid asteroid1 = new Asteroid(new Point(100, 300), new Point(5, 5), new Size(6, 6));
+        public static Bullet bullet1 = new Bullet(new Point(500, 300), new Point(5, 5), new Size(6, 6));
         public static Random rand=new Random();
         public static void Draw()
         {
@@ -67,6 +72,11 @@ namespace HomeWorks
         {
             asteroid.Update();
             bullet.Update();
+            if (asteroid.Collision(bullet))
+            {
+                System.Media.SystemSounds.Hand.Play();
+            }
+            
         }
     }
 }

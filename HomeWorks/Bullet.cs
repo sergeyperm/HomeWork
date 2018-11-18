@@ -19,8 +19,10 @@ namespace HomeWorks
         }
         public override void Update()
         {
-            pos.X = pos.X + 3;
-            if (pos.X > 1000) pos.X = -10;
+            //pos.X = pos.X + 3;
+            //if (pos.X > 1000) pos.X = -10;
+            pos.X = pos.X - 3;
+            if (pos.X > 1000) pos.X = 10;
         }
         public void Move()
         {

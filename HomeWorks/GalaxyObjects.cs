@@ -7,7 +7,12 @@ using System.Threading.Tasks;
 
 namespace HomeWorks
 {
-    abstract class GalaxyObjects
+    interface ICollision
+    {
+        bool Collision(ICollision obj);
+        Rectangle Rect { get; }
+    }
+    abstract class GalaxyObjects:ICollision
     {
         public Point pos;
         public Point dir;
@@ -20,7 +25,10 @@ namespace HomeWorks
         }
         public abstract void Draw();
         public abstract void Update();
-       
-        
+
+        public bool Collision(ICollision o) => o.Rect.IntersectsWith(this.Rect);
+        public Rectangle Rect => new Rectangle(pos,size);
+
+
     }
 }
