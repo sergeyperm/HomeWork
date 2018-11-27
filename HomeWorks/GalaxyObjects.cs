@@ -13,21 +13,12 @@ namespace HomeWorks
         bool Collision(ICollision obj);
         Rectangle Rect { get; }
     }
+    public delegate void Message();
     abstract class GalaxyObjects:ICollision
     {
         public Point pos;
         public Point dir;
-        public Size size
-        {
-            get { return size; }
-            set
-            {
-                //if (value.Height < 10||value.Width<10)
-                //{
-                //    throw new GameObjectException("Размер объекта не может быть меньше 10");
-                //}
-            }
-        }
+        public Size size;
         public GalaxyObjects(Point _pos, Point _dir, Size _size)
         {
             pos = _pos;
