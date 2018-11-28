@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace HomeWorks
 {
@@ -12,6 +13,7 @@ namespace HomeWorks
         bool Collision(ICollision obj);
         Rectangle Rect { get; }
     }
+    public delegate void Message();
     abstract class GalaxyObjects:ICollision
     {
         public Point pos;
@@ -25,10 +27,8 @@ namespace HomeWorks
         }
         public abstract void Draw();
         public abstract void Update();
-
         public bool Collision(ICollision o) => o.Rect.IntersectsWith(this.Rect);
-        public Rectangle Rect => new Rectangle(pos,size);
-
+        public Rectangle Rect => new Rectangle(pos, size);
 
     }
 }
