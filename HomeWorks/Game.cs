@@ -88,8 +88,8 @@ namespace HomeWorks
         }
         public static void Update()
         {
-            asteroid.Update();
-            bullet.Update();
+            asteroid?.Update();
+            bullet?.Update();
             if (asteroid.Collision(bullet))
             {
                 System.Media.SystemSounds.Beep.Play();
