@@ -33,16 +33,16 @@ namespace HomeWorks
         }
         public void Down(Galaxy galaxy)
         {
-            if (pos.Y < galaxy.galaxyHeight) pos.Y = pos.Y + dir.Y;
+            if (pos.Y < galaxy.galaxyHeight-12) pos.Y = pos.Y + dir.Y;
         }
 
-        public void Right()
+        public void Right(Galaxy galaxy)
         {
-            pos.X = pos.X + dir.X;
+            if (pos.X<galaxy.galaxyWidth-12) pos.X= pos.X + dir.X;
         }
         public void Left()
         {
-            pos.X = pos.X - dir.X;
+            if (pos.X>0) pos.X = pos.X - dir.X;
         }
 
         public void Die()
