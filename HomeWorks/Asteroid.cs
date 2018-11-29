@@ -21,8 +21,9 @@ namespace HomeWorks
         public override void Update()
         {
             pos.X = pos.X + dir.X;
+            pos.Y = pos.Y + dir.Y;
             if (pos.X > 1000) pos.X = -10;
-            //pos.Y = pos.Y + dir.Y;
+            if (pos.Y > 600) pos.Y = -10;
         }
         public void Move()
         {
