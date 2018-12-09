@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,23 +11,30 @@ namespace Lesson_2_HomeWork
     {
         static void Main(string[] args)
         {
-            Emploers emploers = new Emploers();
-            emploers.workers[0] = new WorkerFixSalary("Vadim", 50000.00);
-            emploers.workers[1] = new WorkerHourSalary("Slava", 280.00);
-            emploers.workers[2] = new WorkerFixSalary("Dmtriy", 80000.00);
-            emploers.workers[3] = new WorkerFixSalary("Oleg", 90000.00);
-            emploers.workers[4] = new WorkerFixSalary("Gleb", 100000.00);
-            emploers.workers[5] = new WorkerHourSalary("Andrey", 200.00);
-            emploers.workers[6] = new WorkerHourSalary("Alexey", 250.00);
-            emploers.workers[7] = new WorkerHourSalary("Stas", 300.00);
-            emploers.workers[8] = new WorkerFixSalary("Sergey", 70000.00);
-            emploers.workers[9] = new WorkerHourSalary("Ivan", 270.00);
-            emploers.emploersPrint();
+            Workers w = new Workers();//Создание экземпляра класса, содержащго массив сотрудников
+            //Заполнение массива сотрудников
+            w.workers[0] = new WorkerFixSalary("Vadim", 50000.00);
+            w.workers[1] = new WorkerFixSalary("Alexey", 20000.00);
+            w.workers[2] = new WorkerFixSalary("Dmtriy", 80000.00);
+            w.workers[3] = new WorkerFixSalary("Oleg", 90000.00);
+            w.workers[4] = new WorkerFixSalary("Stas", 100000.00);
+            w.workers[5] = new WorkerFixSalary("Gleb", 120000.00);
+            w.workers[6] = new WorkerFixSalary("Sergey", 130000.00);
+            w.workers[7] = new WorkerFixSalary("Daniil", 100000.00);
+            w.workers[8] = new WorkerFixSalary("Slava", 80000.00);
+            w.workers[9] = new WorkerFixSalary("Ivan", 10000.00);
+            //Вывод на экран массива сотрудников
+            Console.WriteLine("Список сотрудников:");
+            Console.WriteLine("=================");
+            w.emploersPrint();
             Console.WriteLine("=================");
             Console.ReadKey();
-            Array.Sort(emploers.workers,new Emploers());
-            emploers.emploersPrint();
-            
+            Console.WriteLine("Список сотрудников после сортировки по убыванию уровня зарплаты:");
+            //Сортировка по убыванию массива сотрудников
+            Array.Sort(w.workers,Workers.WorkersComparer());
+            w.emploersPrint();
+           
+            Console.WriteLine("=================");
             Console.ReadKey();
         }
     }

@@ -48,7 +48,7 @@
     <Compile Include="Worker.cs" />
     <Compile Include="WorkerFixSalary.cs" />
     <Compile Include="WorkerHourSalary.cs" />
-    <Compile Include="Emploers.cs" />
+    <Compile Include="Workers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

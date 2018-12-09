@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Lesson_2_HomeWork
 {
+    /// <summary>
+    /// Класс Рабочий, содержащий информацию о рабочем
+    /// </summary>
+
     abstract class Worker
     {
         private string _name;

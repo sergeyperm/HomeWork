@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-
+using System.Windows.Forms;
 using System.Threading.Tasks;
 
 namespace HomeWorks
@@ -13,16 +13,21 @@ namespace HomeWorks
         private int _energy = 100;
         public static event Message MessageDie;
         public int Energy => _energy;
+        string shipPath;
         public void EnergyLow(int n)
         {
             _energy -= n;
         }
-        public Ship(Point pos, Point dir, Size size) : base(pos, dir, size)
+        public Ship(Point pos, Point dir, Size size, string _shipPath) : base(pos, dir, size)
         {
+            shipPath = _shipPath;
         }
         public override void Draw()
         {
-            Game.Buffer.Graphics.FillEllipse(Brushes.Wheat, pos.X, pos.Y,size.Width, size.Height);
+            // Game.Buffer.Graphics.FillEllipse(Brushes.Wheat, pos.X, pos.Y,size.Width, size.Height);
+            Bitmap _image = new Bitmap(Application.StartupPath + shipPath);
+            Rectangle rect = new Rectangle(pos.X, pos.Y, size.Width, size.Height);
+            Game.Buffer.Graphics.DrawImage(_image, rect);
         }
         public override void Update()
         {

@@ -12,9 +12,9 @@ namespace HomeWorks
     {
         private static BufferedGraphicsContext _context;
         public static BufferedGraphics Buffer;
-        private static Ship _ship = new Ship(new Point(500, 200), new Point(5, 5), new Size(10, 10));
+        private static Ship _ship = new Ship(new Point(500, 200), new Point(5, 5), new Size(80, 30), "\\PlanetImages\\ship.jpg");
         public static Galaxy galaxy;
-        public static Asteroid asteroid = new Asteroid(new Point(10, 200), new Point(5, 5), new Size(6, 6));
+        public static Asteroid asteroid = new Asteroid(new Point(10, 200), new Point(5, 5), new Size(20, 20));
         public static Bullet bullet;
         public static Sputnik sputnik = new Sputnik(new Point(100, 200), new Point(5, 5), new Size(20, 20), "\\PlanetImages\\sputnik.jpg");
         public static Random rand = new Random();
@@ -48,7 +48,7 @@ namespace HomeWorks
         public static void Finish()
         {
             timer.Stop();
-            Buffer.Graphics.DrawString("Game Over", new Font(FontFamily.GenericSansSerif,60, FontStyle.Underline), Brushes.White, 500, 500);
+            Buffer.Graphics.DrawString("Game Over", new Font(FontFamily.GenericSansSerif,60, FontStyle.Underline), Brushes.White, 400, 200);
             Buffer.Render();
         }
         
@@ -94,7 +94,7 @@ namespace HomeWorks
                     System.Media.SystemSounds.Asterisk.Play();
                     asteroid = null;
                     bullet = null;
-                    asteroid = new Asteroid(new Point(rand.Next(10, 100),rand.Next(10,100)), new Point(5, 5), new Size(10, 10));
+                    asteroid = new Asteroid(new Point(rand.Next(10, 100),rand.Next(10,100)), new Point(5, 5), new Size(20, 20));
                     countAsteroids++;
                 }
             }

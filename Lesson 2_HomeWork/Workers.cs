@@ -7,27 +7,33 @@ using System.Threading.Tasks;
 
 namespace Lesson_2_HomeWork
 {
-    class Emploers:IComparer
+    /// <summary>
+    /// Класс 
+    /// </summary>
+    class Workers:IComparer
     {
-        public Worker[] workers = new Worker[10];
-        public Emploers() { }
+       public Workers() { }
+       public Worker[] workers = new Worker[10];
+        //Метод вывода на экран информации о рабочих с использованием foreach
         public void emploersPrint()
         {
             foreach (Worker w in workers)
             {
                 if (w is WorkerFixSalary)
                 {
-                    Console.WriteLine("Name-{0}   Salary in mounth-{1}", w.name, (w as WorkerFixSalary).fixRate);
+                    Console.WriteLine("Name-{0}{1}Salary in mounth-{2}", w.name,"\t", (w as WorkerFixSalary).fixRate);
                 }
 
                 if (w is WorkerHourSalary)
                 {
-                    Console.WriteLine("Name-{0}   Salary in hour-{1}", w.name, (w as WorkerHourSalary).hourlyRate);
+                    Console.WriteLine("Name-{0}{1}Salary in hour-{1}", w.name,"\t", (w as WorkerHourSalary).hourlyRate);
                 }
 
 
             }
         }
+        
+        //Реализация интерфейса IComparer. Сравнение по заработной плате.
         int IComparer.Compare(object x, object y)
         {
             if ((x is WorkerFixSalary) && (y is WorkerFixSalary))
@@ -59,5 +65,9 @@ namespace Lesson_2_HomeWork
             return 2;
         }
 
+        public static IComparer WorkersComparer()
+        {
+            return new Workers();
+        }
     }
 }

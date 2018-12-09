@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Lesson_2_HomeWork
 {
+    /// <summary>
+    /// Класс Рабочий с фиксированной платой
+    /// </summary>
     class WorkerFixSalary:Worker
     {
         public double fixRate { get; set;}
@@ -13,7 +16,7 @@ namespace Lesson_2_HomeWork
         {
             fixRate = _fixRate;
         }
-
+        //Метод расчета зарплаты
         public override void SalaryCalc()
         {
             averageSalary = fixRate;

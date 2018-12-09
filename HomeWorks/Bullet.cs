@@ -19,7 +19,7 @@ namespace HomeWorks
         }
         public override void Update()
         {
-            pos.X = pos.X - dir.X;
+            pos.X = pos.X - dir.X*2;
             
         }
         public void Move()
